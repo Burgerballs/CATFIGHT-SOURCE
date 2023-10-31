@@ -145,6 +145,17 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		option.changeValue = 0.1;
 		addOption(option);
 
+		var option:Option = new Option('Note Offset',
+			'Changes how late/early notes spawn during gameplay.\nUseful for bluetooth headphones with lots of delay.',
+			'noteOffset',
+			'int',
+			0);
+		option.displayFormat = '%vms';
+		option.scrollSpeed = 20;
+		option.minValue = -5000;
+		option.maxValue = 5000;
+		addOption(option);
+
 		super();
 	}
 

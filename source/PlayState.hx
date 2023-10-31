@@ -72,7 +72,7 @@ import sys.FileSystem;
 import sys.io.File;
 #end
 
-#if VIDEOS_ALLOWED
+#if VIDEOS_ALLOWED 
 import vlc.MP4Handler;
 #end
 
@@ -2754,6 +2754,9 @@ class PlayState extends MusicBeatState
 					if(daNote.copyY)
 					{
 						daNote.y = strumY + Math.sin(angleDir) * daNote.distance;
+
+						if(daNote.isSustainNote)
+							daNote.y += 120; // lazy fix for sustains being visually higher up than they should be
 
 						//Jesus fuck this took me so much mother fucking time AAAAAAAAAA
 						if(strumScroll && daNote.isSustainNote)
